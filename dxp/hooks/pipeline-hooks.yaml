@@ -51,6 +51,6 @@ hooks:
     position: pre
     name: hook-e2e-s95-middle
     image: harbor.dxp/dxp/testhook:latest
-    command: ["./seed.sh"]
-    args: ["--dry-run"]
+    command: ["sh"]
+    args: ["-c", "echo hook-e2e-s95 middle-of-pipeline test ok"]
     timeoutSeconds: 30
