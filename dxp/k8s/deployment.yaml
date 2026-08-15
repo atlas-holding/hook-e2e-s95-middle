@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${{ values.name }}
+  name: hook-e2e-s95-middle
   labels:
-    app: ${{ values.name }}
+    app: hook-e2e-s95-middle
     dxp.io/managed: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ${{ values.name }}
+      app: hook-e2e-s95-middle
   template:
     metadata:
       labels:
-        app: ${{ values.name }}
-        backstage.io/kubernetes-id: ${{ values.name }}
+        app: hook-e2e-s95-middle
+        backstage.io/kubernetes-id: hook-e2e-s95-middle
     spec:
       nodeSelector:
         role: workload
@@ -24,8 +24,8 @@ spec:
         value: workload
         effect: NoSchedule
       containers:
-      - name: ${{ values.name }}
-        image: harbor.dxp/dxp/${{ values.name }}:latest
+      - name: hook-e2e-s95-middle
+        image: harbor.harbor.svc.cluster.local/dxp/hook-e2e-s95-middle:fa495f2
         imagePullPolicy: Always
         envFrom:
         - secretRef:
@@ -53,10 +53,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ${{ values.name }}
+  name: hook-e2e-s95-middle
 spec:
   selector:
-    app: ${{ values.name }}
+    app: hook-e2e-s95-middle
   ports:
   - port: 80
     targetPort: 3000
@@ -65,9 +65,9 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ${{ values.name }}
+  name: hook-e2e-s95-middle
   labels:
-    app: ${{ values.name }}
+    app: hook-e2e-s95-middle
     dxp.io/managed: "true"
 spec:
   ingressClassName: nginx
@@ -83,15 +83,15 @@ spec:
   # uniquement a enregistrer le host aupres du mecanisme de redirection.
   tls:
   - hosts:
-    - ${{ values.name }}.68.221.5.247.nip.io
+    - hook-e2e-s95-middle.68.221.5.247.nip.io
   rules:
-  - host: ${{ values.name }}.68.221.5.247.nip.io
+  - host: hook-e2e-s95-middle.68.221.5.247.nip.io
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: ${{ values.name }}
+            name: hook-e2e-s95-middle
             port:
               number: 80

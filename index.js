@@ -1,6 +1,6 @@
 const http = require('http');
 const port = process.env.PORT || 3000;
-const SERVICE = '${{ values.name }}';
+const SERVICE = 'hook-e2e-s95-middle';
 const ENV = process.env.ENV || 'dev';
 const VERSION = process.env.VERSION || 'latest';
 

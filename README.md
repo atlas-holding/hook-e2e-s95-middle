@@ -1,6 +1,6 @@
-# ${{ values.name }}
+# hook-e2e-s95-middle
 
-${{ values.description }}
+hook-e2e-s95-middle service
 
 ## Stack
 - Langage : ${{ values.language }}
@@ -11,9 +11,9 @@ ${{ values.description }}
 ```bash
 # Cloner le repo
 git clone <repo-url>
-cd ${{ values.name }}
+cd hook-e2e-s95-middle
 
 # Lancer en local
-docker build -t ${{ values.name }} .
-docker run -p 8080:8080 ${{ values.name }}
+docker build -t hook-e2e-s95-middle .
+docker run -p 8080:8080 hook-e2e-s95-middle
 ```

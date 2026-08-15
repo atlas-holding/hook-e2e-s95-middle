@@ -1,7 +1,7 @@
 {
-  "name": "${{ values.name }}",
+  "name": "hook-e2e-s95-middle",
   "version": "1.0.0",
-  "description": "${{ values.description }}",
+  "description": "hook-e2e-s95-middle service",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
