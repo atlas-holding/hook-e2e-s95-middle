@@ -50,7 +50,7 @@ hooks:
   - stage: test
     position: pre
     name: hook-e2e-s95-middle
-    image: harbor.dxp/dxp/seed-tool:1.0.0
+    image: harbor.dxp/dxp/testhook:latest
     command: ["./seed.sh"]
     args: ["--dry-run"]
     timeoutSeconds: 30
