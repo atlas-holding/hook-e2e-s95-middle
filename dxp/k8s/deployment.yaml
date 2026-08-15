@@ -25,7 +25,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: hook-e2e-s95-middle
-        image: harbor.harbor.svc.cluster.local/dxp/hook-e2e-s95-middle:cd131a9
+        image: harbor.harbor.svc.cluster.local/dxp/hook-e2e-s95-middle:664b75c
         imagePullPolicy: Always
         envFrom:
         - secretRef:
