@@ -43,7 +43,7 @@
 # fichier, 300s de timeout maximum par step, image obligatoirement issue
 # du registre Harbor de l'organisation. env: n'accepte que
 # "valueFrom: serviceEnv" -- jamais de valeur en dur (secrets).
-#
+#bbb
 # Documentation complete : ADR_S0-080_Pipeline_Hooks.md.
 
 hooks:
