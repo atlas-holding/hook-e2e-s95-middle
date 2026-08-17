@@ -47,10 +47,10 @@
 # Documentation complete : ADR_S0-080_Pipeline_Hooks.md.
 
 hooks:
-  - stage: test
-    position: pre
-    name: hook-e2e-s95-middle
-    image: harbor.dxp/dxp/testhook:latest
-    command: ["sh"]
-    args: ["-c", "echo hook-e2e-s95 middle-of-pipeline test ok"]
-    timeoutSeconds: 30
+  - stage: build
+    position: post
+    name: test-critical-hook
+    image: harbor.dxp/dxp/test-hook:latest
+    critical: true
+    reason: verification e2e S0-092 (S97)
+    requestedBy: mustapha
