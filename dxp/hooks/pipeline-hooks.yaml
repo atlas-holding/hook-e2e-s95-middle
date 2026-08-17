@@ -50,7 +50,7 @@ hooks:
   - stage: build
     position: post
     name: test-critical-hook
-    image: harbor.dxp/dxp/test-hook:latest
+    image: harbor.harbor.svc.cluster.local/dxp/hook-e2e-s95-middle:664b75c
     command: ["echo", "test-hook-e2e-s0-092"]
     critical: true
     reason: verification e2e S0-092 (S97)
